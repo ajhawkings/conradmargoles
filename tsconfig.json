@@ -19,6 +19,7 @@
       "@styles/*": ["./src/styles/*"],
       "@components/*": ["./src/components/*"],
       "@pages/*": ["./src/pages/*"],
+      "@lib/*": ["./src/lib/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
