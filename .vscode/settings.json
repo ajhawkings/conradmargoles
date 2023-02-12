@@ -1,6 +1,15 @@
 {
   "cSpell.words": [
+    "autofix",
+    "camelcase",
     "Margoles",
     "tailwindcss"
-  ]
+  ],
+  // set default formatter to eslint for ts and tsx files
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
 }
