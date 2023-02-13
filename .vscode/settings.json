@@ -3,6 +3,7 @@
     "autofix",
     "camelcase",
     "Margoles",
+    "paren",
     "tailwindcss"
   ],
   // set default formatter to eslint for ts and tsx files
