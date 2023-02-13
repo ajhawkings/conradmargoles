@@ -1,6 +1,5 @@
+import { promises } from 'fs'
 import { useState } from 'react'
-
-import fs from 'fs'
 
 import Head from 'next/head'
 import Image from 'next/image'
@@ -8,10 +7,10 @@ import Link from 'next/link'
 
 import styles from '@styles/Landing.module.css'
 
-export async function getStaticProps() {
+export async function getStaticProps () {
   // images are located in images/home
   // fetch a list of all files in that directory
-  const files = fs.readdirSync('public/images/home')
+  const files: string[] = await promises.readdir('public/images/home')
   return { props: { files } }
 }
 
@@ -19,7 +18,7 @@ interface Props {
   files: string[]
 }
 
-export default function Landing({ files }: Props) {
+export default function Landing ({ files }: Props) {
   const [current, setCurrent] = useState(0)
 
   return <>
