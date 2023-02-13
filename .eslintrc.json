@@ -25,6 +25,7 @@
     "sort-imports": ["error", { "allowSeparatedGroups": true }],
     "spaced-comment": ["error"],
     "space-before-function-paren": ["error", "always"],
-    "object-curly-spacing": ["error", "always"]
+    "object-curly-spacing": ["error", "always"],
+    "eol-last": ["error", "always"]
   }
 }

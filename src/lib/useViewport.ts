@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export default function useViewport() {
+export default function useViewport () {
   const [viewport, setViewport] = useState([0,0])
 
   useEffect(() => {
