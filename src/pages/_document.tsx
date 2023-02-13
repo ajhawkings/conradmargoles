@@ -1,4 +1,4 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+import { Head, Html, Main, NextScript } from 'next/document'
 
 export default function Document() {
   return (
@@ -15,7 +15,7 @@ export default function Document() {
         <meta itemProp='image' content='/images/handwritten/CAArchitects_LogoBlack.png' />
         {/* Open Graph (Facebook, Discord, SMS) */}
         <meta property='og:title' content='Conrad Margoles Architects' />
-        <meta property='og:description' content='Learn about our Young Enterprise team - Squabble' />
+        <meta property='og:description' content='Conrad Margoles Architects' />
         <meta property='og:type' content='website' />
         <meta property='og:url' content='https://conradmargoles.com' />
         <meta property='og:image' content='/images/handwritten/CAArchitects_LogoBlack.png' />
