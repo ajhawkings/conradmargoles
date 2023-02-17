@@ -3,7 +3,16 @@
   top: 2rem;
   left: 2rem;
   z-index: 1;
-  width: min(60vw, 300px);
+  width: min(90vw, 300px);
+  height: auto;
+}
+
+@media (max-width: 1000px) {
+  .logo {
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, 0);
+  }
 }
 
 .arrow {
@@ -25,6 +34,7 @@
   position: relative;
   height: 100vh;
   display: flex;
+  overflow: clip;
 }
 
 .image {
@@ -35,11 +45,11 @@
 
 .slide {
   opacity: 0;
-  transition-duration: 1s ease;
 }
 
 .slide.active {
   opacity: 1;
   transition-duration: 1s;
   transform: scale(1.08);
+  width: 100%;
 }
