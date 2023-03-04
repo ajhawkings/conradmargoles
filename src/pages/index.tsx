@@ -30,8 +30,8 @@ export default function Landing ({ files }: Props) {
         <Image
           src="images/handwritten/Arrows Left Black.png"
           alt="Previous image"
-          width="100"
-          height="100"
+          width="50"
+          height="50"
         />
       </button>
     }
@@ -40,8 +40,8 @@ export default function Landing ({ files }: Props) {
         <Image
           src="images/handwritten/Arrows Right Black.png"
           alt="Next image"
-          width="100"
-          height="100"
+          width="50"
+          height="50"
         />
       </button>
     }
