@@ -1,0 +1,57 @@
+.root {
+  position: relative;
+}
+
+.container {
+  overflow: hidden;
+  margin: 1rem 60px 1rem 1rem;
+  height: 100%;
+}
+
+.slider {
+  display: flex;
+  height: calc(100vh - 64px);
+  width: 100%;
+  min-height: 0;
+  min-width: 0;
+  flex-direction: row;
+  gap: 1rem;
+  transition: transform 1s;
+}
+
+.slider > img {
+  height: auto;
+  width: auto;
+}
+
+.arrow {
+  all: unset;
+  position: absolute;
+  top: 50%;
+  left: -60px;
+  cursor: pointer;
+}
+
+.right {
+  right: 0;
+  left: auto;
+}
+
+@media (max-width: 1000px) {
+  .arrow {
+    display: none;
+  }
+  .container {
+    margin: 0 1rem;
+  }
+  .slider {
+    display: grid;
+    height: auto;
+  }
+  .slider > img {
+    width: 100%;
+  }
+  img.landscape {
+    grid-column: span 2;
+  }
+}
