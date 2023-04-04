@@ -58,10 +58,9 @@ export default function Landing ({ files }: Props) {
         width="300"
         height="100"
       />
-      <section className={styles.slider}>
+      <section>
         {files.map((file, index) => (
           <div className={index === current ? `${styles.slide} ${styles.active}` : styles.slide} key={index}>
-            {/* {index === current && ( */}
             <Image 
               src={`images/home/${file}`} 
               alt="Architectural project" 
@@ -69,7 +68,6 @@ export default function Landing ({ files }: Props) {
               width="2560" 
               height="1709"
             />
-            {/* )} */}
           </div>
         ))}
       </section>
