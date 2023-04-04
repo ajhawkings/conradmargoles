@@ -29,11 +29,11 @@ export function getProjects () {
     const project = {
       name: name,
       path: name.replace(/ /g, '-').toLowerCase(),
-      photos: photos.map(photo => { return {
+      photos: photos.map(photo => ({
         src: `/images/projects/${folder}/${photo}`,
         width: sizeOf(`public/images/projects/${folder}/${photo}`).width,
         height: sizeOf(`public/images/projects/${folder}/${photo}`).height
-      }}),
+      })),
       cover: `/images/projects/${folder}/Cover.jpg`,
       textMobile: `/images/projects/${folder}/TextMobile.png`,
       textDesktop: `/images/projects/${folder}/TextDesktop.png`
