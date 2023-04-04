@@ -22,13 +22,6 @@
   left: auto;
 }
 
-.slider {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  overflow: clip;
-}
-
 .image {
   width: 100%;
   height: 100%;
@@ -36,12 +29,18 @@
 }
 
 .slide {
+  width: 100%;
+  height: 100%;
+  overflow: clip;
+  position: absolute;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide:not(.active) {
   opacity: 0;
 }
 
 .slide.active {
+  transition-delay: 1s;
   opacity: 1;
-  transition-duration: 1s;
-  transform: scale(1.08);
-  width: 100%;
 }
