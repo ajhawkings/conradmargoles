@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import styles from '@styles/Project.module.css'
 import useViewport from '@lib/useViewport'
 
+import Head from 'next/head'
 import Image from 'next/image'
 import Wrapper from '@components/wrapper'
 
@@ -59,7 +60,10 @@ export default function Project ({ project }: { project: ProjectType }) {
   
   const length = photos.length - 1
 
-  return (
+  return <>
+    <Head>
+      <title>Project | Conrad Margoles Architects</title>
+    </Head>
     <Wrapper>
       <div className={styles.root}>
         <button className={styles.arrow} onClick={() => setPosition((position > 0) ? (position - 1) : length)}>
@@ -94,5 +98,5 @@ export default function Project ({ project }: { project: ProjectType }) {
         </button>
       </div>
     </Wrapper>
-  )
+  </>
 }
