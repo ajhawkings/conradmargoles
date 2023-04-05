@@ -18,32 +18,29 @@ export function getStaticProps () {
 }
 
 export default function Portfolio (props: { projects: ProjectType[] }) {
-  return (
-    <>
-      <Head>
-        <title>Portfolio | Conrad Margoles Architects</title>
-      </Head>
-      {/* <Header /> */}
-      <Wrapper>
-        {props.projects.map((project: ProjectType) => (
-          <Link href={`/projects/${project.path}`} className={styles.project} key={project.name}>
-            <Image
-              src={project.cover}
-              alt={project.name}
-              width="2000"
-              height="1335"
-              className={styles.image}
-            />
-            <Image
-              src={project.textDesktop}
-              alt={project.name}
-              width="500"
-              height="1335"
-              className={styles.text}
-            />
-          </Link>
-        ))}
-      </Wrapper>
-    </>
-  )
+  return <>
+    <Head>
+      <title>Portfolio | Conrad Margoles Architects</title>
+    </Head>
+    <Wrapper>
+      {props.projects.map((project: ProjectType) => (
+        <Link href={`/projects/${project.path}`} className={styles.project} key={project.name}>
+          <Image
+            src={project.cover}
+            alt={project.name}
+            width="2000"
+            height="1335"
+            className={styles.image}
+          />
+          <Image
+            src={project.textDesktop}
+            alt={project.name}
+            width="500"
+            height="1335"
+            className={styles.text}
+          />
+        </Link>
+      ))}
+    </Wrapper>
+  </>
 }
