@@ -5,7 +5,7 @@
 
 @media (min-width: 1000px) {
   .container {
-    margin: 0 max(0px, calc(50vw - 800px));
+    margin: 0 max(0px, calc(50vw - 1000px));
   }
 }
 
@@ -21,9 +21,14 @@
   position: fixed;
 }
 
+.logo {
+  width: min(60vw, 300px);
+  height: auto;
+}
+
 .main {
   min-width: 0;
-  margin-left: 280px;
+  margin-left: 320px;
 }
 
 .menu {
@@ -36,6 +41,10 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.menuItems :nth-child(3) {
+  margin-top: 5px;
 }
 
 @media (max-width: 1000px) {
