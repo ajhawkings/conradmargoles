@@ -1,6 +1,7 @@
 import { ProjectType, getProjects } from '@lib/projects'
 import { useEffect, useRef, useState } from 'react'
 import styles from '@styles/Project.module.css'
+import useViewport from '@lib/useViewport'
 
 import Image from 'next/image'
 import Wrapper from '@components/wrapper'
@@ -27,22 +28,36 @@ export function getStaticProps ({ params }: { params: { id: string } }) {
 }
       
 export default function Project ({ project }: { project: ProjectType }) {
+  const [width] = useViewport()
+  const photos = project.photos
+  if (width < 1000) { 
+    // sort by last number in filename
+    photos.sort((a, b) => Number(a.src.slice(a.src.lastIndexOf(' ') + 1).split('.')[0]) - Number(b.src.slice(b.src.lastIndexOf(' ') + 1).split('.')[0]))
+  } else {
+    // sort alphabetically
+    photos.sort((a, b) => a.src.localeCompare(b.src))
+  }
+
   const [position, setPosition] = useState(0)
-  const [width, setWidth] = useState(0)
+  const [distance, setDistance] = useState(0)
   const galleryRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    // Get the widths of all the images before the current one
-    const imageWidths = Array.from(galleryRef?.current?.children ?? []).slice(0, position)
-    // Sum the widths of all the images before the current one
-    let sum = imageWidths.reduce((sum, element) => (sum + element.clientWidth), 0)
-    // Add the margin between images
-    sum += (position * 16)
-    // Set the width of the slider
-    setWidth(sum)
-  }, [galleryRef, position])
+    if (width > 1000) {
+      // Get the widths of all the images before the current one
+      const imageWidths = Array.from(galleryRef?.current?.children ?? []).slice(0, position)
+      // Sum the widths of all the images before the current one
+      let sum = imageWidths.reduce((sum, element) => (sum + element.clientWidth), 0)
+      // Add the margin between images
+      sum += (position * 16)
+      // Set the width of the slider
+      setDistance(sum)
+    } else {
+      setDistance(0)
+    }
+  }, [galleryRef, position, width])
   
-  const length = project.photos.length - 1
+  const length = photos.length - 1
 
   return (
     <Wrapper>
@@ -56,7 +71,7 @@ export default function Project ({ project }: { project: ProjectType }) {
           />
         </button>
         <div className={styles.container}>
-          <div className={styles.slider} ref={galleryRef} style={{ transform: `translateX(-${width}px)` }}>
+          <div className={styles.slider} ref={galleryRef} style={{ transform: `translateX(-${distance}px)` }}>
             {project.photos.map((photo) => (
               <Image
                 key={photo.src}
