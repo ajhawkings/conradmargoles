@@ -20,8 +20,9 @@ export default function Wrapper ({ children }: { children: ReactNode }) {
           <Image
             src="/images/handwritten/CAArchitects_LogoBlack.png"
             alt="Conrad Margoles Architects logo"
-            width="250"
-            height="80"
+            width="300"
+            height="100"
+            className={styles.logo}
           />
         </Link>
         {(width < 1000) &&
