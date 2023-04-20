@@ -2,6 +2,7 @@
   display: flex;
   overflow: clip;
   margin: 1rem;
+  background-color: #ebebed;
 }
 
 .project > * {
@@ -12,10 +13,6 @@
 .image {
   transition: transform 0.2s;
   object-fit: cover;
-}
-
-.image:hover {
-  transform: scale(1.2);
 }
 
 .text {

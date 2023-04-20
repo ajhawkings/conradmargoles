@@ -1,7 +1,9 @@
 import { ProjectType, getProjects } from '@lib/projects'
-import { useLayoutEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import styles from '@styles/Project.module.css'
+import useViewport from '@lib/useViewport'
 
+import Head from 'next/head'
 import Image from 'next/image'
 import Wrapper from '@components/wrapper'
 
@@ -16,7 +18,7 @@ export function getStaticPaths () {
   }
 }
 
-export function getStaticProps ( { params }: { params: { id: string } } ) {
+export function getStaticProps ({ params }: { params: { id: string } }) {
   const projects = getProjects()
   const project = projects.find((project) => project.path === params.id) || { name: 'Not Found' }
   return {
@@ -26,35 +28,54 @@ export function getStaticProps ( { params }: { params: { id: string } } ) {
   }
 }
       
-// @refresh reset
+export default function Project ({ project }: { project: ProjectType }) {
+  const [width] = useViewport()
+  const photos = project.photos
+  if (width < 1000) { 
+    // sort by last number in filename
+    photos.sort((a, b) => Number(a.src.slice(a.src.lastIndexOf(' ') + 1).split('.')[0]) - Number(b.src.slice(b.src.lastIndexOf(' ') + 1).split('.')[0]))
+  } else {
+    // sort alphabetically
+    photos.sort((a, b) => a.src.localeCompare(b.src))
+  }
 
-export default function Project ( { project }: { project: ProjectType } ) {
   const [position, setPosition] = useState(0)
+  const [distance, setDistance] = useState(0)
+  const galleryRef = useRef<HTMLDivElement>(null)
 
-  const [width, setWidth] = useState(0)
-  const ref = useRef<HTMLDivElement>(null)
-  useLayoutEffect(() => {
-    if (ref.current) {
-      setWidth(ref.current.scrollWidth - ref.current.offsetWidth)
+  useEffect(() => {
+    if (width > 1000) {
+      // Get the widths of all the images before the current one
+      const imageWidths = Array.from(galleryRef?.current?.children ?? []).slice(0, position)
+      // Sum the widths of all the images before the current one
+      let sum = imageWidths.reduce((sum, element) => (sum + element.clientWidth), 0)
+      // Add the margin between images
+      sum += (position * 16)
+      // Set the width of the slider
+      setDistance(sum)
+    } else {
+      setDistance(0)
     }
-  }, [])
-  console.log(width)
+  }, [galleryRef, position, width])
   
-  return (
+  const length = photos.length - 1
+
+  return <>
+    <Head>
+      <title>Project | Conrad Margoles Architects</title>
+    </Head>
     <Wrapper>
       <div className={styles.root}>
-        {position !== 0 &&
-          <button className={styles.arrow} onClick={() => setPosition(Math.max((position - 800), 0))}>
-            <Image
-              src="/images/handwritten/Arrows Left Black.png"
-              alt="Previous image"
-              width="50"
-              height="50"
-            />
-          </button>
-        }
+        <button className={styles.arrow} onClick={() => setPosition((position > 0) ? (position - 1) : length)}>
+          <Image
+            src="/images/handwritten/Arrows Left Black.png"
+            alt="Previous image"
+            width="50"
+            height="50"
+          />
+        </button>
         <div className={styles.container}>
-          <div className={styles.slider} ref={ref} style={{ transform: `translateX(-${position}px)` }}>
+          <div className={styles.slider} ref={galleryRef} style={{ transform: `translateX(-${distance}px)` }}>
             {project.photos.map((photo) => (
               <Image
                 key={photo.src}
@@ -67,17 +88,15 @@ export default function Project ( { project }: { project: ProjectType } ) {
             ))}
           </div>
         </div>
-        {position !== width &&
-          <button className={`${styles.arrow} ${styles.right}`} onClick={() => setPosition(Math.min((position + 800), width))}>
-            <Image
-              src="/images/handwritten/Arrows Right Black.png"
-              alt="Next image"
-              width="50"
-              height="50"
-            />
-          </button>
-        }
+        <button className={`${styles.arrow} ${styles.right}`} onClick={() => setPosition((position < length) ? (position + 1) : 0)}>
+          <Image
+            src="/images/handwritten/Arrows Right Black.png"
+            alt="Next image"
+            width="50"
+            height="50"
+          />
+        </button>
       </div>
     </Wrapper>
-  )
+  </>
 }

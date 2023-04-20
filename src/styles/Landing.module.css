@@ -3,16 +3,8 @@
   top: 2rem;
   left: 2rem;
   z-index: 1;
-  width: min(90vw, 300px);
+  width: min(80vw, 300px);
   height: auto;
-}
-
-@media (max-width: 1000px) {
-  .logo {
-    left: 50%;
-    right: 50%;
-    transform: translate(-50%, 0);
-  }
 }
 
 .arrow {
@@ -30,13 +22,6 @@
   left: auto;
 }
 
-.slider {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  overflow: clip;
-}
-
 .image {
   width: 100%;
   height: 100%;
@@ -44,12 +29,18 @@
 }
 
 .slide {
+  width: 100%;
+  height: 100%;
+  overflow: clip;
+  position: absolute;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide:not(.active) {
   opacity: 0;
 }
 
 .slide.active {
+  transition-delay: 1s;
   opacity: 1;
-  transition-duration: 1s;
-  transform: scale(1.08);
-  width: 100%;
 }
