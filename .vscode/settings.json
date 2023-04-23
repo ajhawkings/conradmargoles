@@ -2,8 +2,10 @@
   "cSpell.words": [
     "autofix",
     "camelcase",
+    "conradmargoles",
     "Margoles",
     "paren",
+    "pwsh",
     "tailwindcss"
   ],
   // set default formatter to eslint for ts and tsx files
