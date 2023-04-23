@@ -9,14 +9,14 @@ A website for a client built with [Next.js](https://nextjs.org/).
 ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
 ![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=Cloudflare&logoColor=white)
 
-
 ## Installation
 
 ### Windows
 
-Install Node and npm using [nvm-windows](https://github.com/coreybutler/nvm-windows). Then, install with:
+Install Node, npm and [nvm-windows](https://github.com/coreybutler/nvm-windows) with:
 
 ```pwsh
+winget install nvm-windows
 nvm install lts
 nvm use lts
 npm install -g npm
@@ -24,9 +24,10 @@ npm install -g npm
 
 ### MacOS/Linux
 
-Install Node and npm using [nvm](https://github.com/nvm-sh/nvm). Then, install with:
+Install Node, npm and [nvm](https://github.com/nvm-sh/nvm) with:
 
 ```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/$(curl -s https://api.github.com/repos/nvm-sh/nvm/releases/latest | grep tag_name | cut -d\" -f4)/install.sh | bash
 nvm use
 npm install -g npm
 ```

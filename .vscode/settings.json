@@ -6,7 +6,8 @@
     "Margoles",
     "paren",
     "pwsh",
-    "tailwindcss"
+    "tailwindcss",
+    "winget"
   ],
   // set default formatter to eslint for ts and tsx files
   "[typescript]": {
