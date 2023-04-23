@@ -7,8 +7,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Wrapper from '@components/wrapper'
 
-export function getStaticPaths () {
-  const projects = getProjects()
+export async function getStaticPaths () {
+  const projects = await getProjects()
   const paths = projects.map((project) => ({
     params: { id: project.path },
   }))
@@ -18,8 +18,8 @@ export function getStaticPaths () {
   }
 }
 
-export function getStaticProps ({ params }: { params: { id: string } }) {
-  const projects = getProjects()
+export async function getStaticProps ({ params }: { params: { id: string } }) {
+  const projects = await getProjects()
   const project = projects.find((project) => project.path === params.id) || { name: 'Not Found' }
   return {
     props: {
@@ -30,6 +30,7 @@ export function getStaticProps ({ params }: { params: { id: string } }) {
       
 export default function Project ({ project }: { project: ProjectType }) {
   const [width] = useViewport()
+  console.log('test')
   const photos = project.photos
   if (width < 1000) { 
     // sort by last number in filename

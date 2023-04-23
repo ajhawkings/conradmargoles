@@ -16,14 +16,12 @@ interface Photo {
   height?: number
 }
 
-export function getProjects () {
-  const folders = fs.readdirSync('public/images/projects')
+export async function getProjects () {
+  const folders = await fs.promises.readdir('public/images/projects')
 
-  const projects: ProjectType[] = []
-
-  folders.forEach(folder => {
+  const projects = folders.map(async (folder) => {
     const name = folder.split(') ')[1]
-    const files = fs.readdirSync(`public/images/projects/${folder}`)
+    const files = await fs.promises.readdir(`public/images/projects/${folder}`)
     const photos = files.filter(file => !file.includes('Cover') && !file.includes('Text'))
     
     const project = {
@@ -39,8 +37,8 @@ export function getProjects () {
       textDesktop: `/images/projects/${folder}/TextDesktop.png`
     }
 
-    projects.push(project)
+    return project
   })
 
-  return projects
+  return await Promise.all(projects)
 }
