@@ -4,6 +4,7 @@
     "camelcase",
     "conradmargoles",
     "Margoles",
+    "nosniff",
     "paren",
     "pwsh",
     "tailwindcss",

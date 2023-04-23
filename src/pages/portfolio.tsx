@@ -7,8 +7,8 @@ import Wrapper from '@components/wrapper'
 
 import styles from '@styles/Portfolio.module.css'
 
-export function getStaticProps () {
-  const projects = getProjects()
+export async function getStaticProps () {
+  const projects = await getProjects()
 
   return {
     props: {
