@@ -1,0 +1,11 @@
+/*
+  Cross-Origin-Resource-Policy: same-origin
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: no-referrer
+
+/*.html
+  X-XSS-Protection: 0
+
+/*.png
+  ! Cross-Origin-Resource-Policy
