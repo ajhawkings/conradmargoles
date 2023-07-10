@@ -12,7 +12,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 2rem;
+  left: 1rem;
   cursor: pointer;
   z-index: 1;
 }

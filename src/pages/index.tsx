@@ -10,8 +10,6 @@ import Wrapper from '@components/wrapper'
 import styles from '@styles/Landing.module.css'
 
 export async function getStaticProps () {
-  // images are located in images/home
-  // fetch a list of all files in that directory
   const files: string[] = await promises.readdir('public/images/home')
   return { props: { files } }
 }
@@ -47,32 +45,32 @@ export default function Landing ({ files }: Props) {
     <Head>
       <title>Conrad Margoles Architects</title>
     </Head>
-    {/* Backwards button */}
+    {/* Back button */}
     <button 
       className={styles.arrow} 
       onClick={() => setCurrent(current > 0 ? (current - 1) : (files.length - 1))}
     >
       <Image
-        src="images/handwritten/Arrows Left Black.png"
+        src="images/handwritten/Arrows Left.png"
         alt="Previous image"
-        width="50"
-        height="50"
+        width="80"
+        height="60"
       />
     </button>
-    {/* Forwards button */}
+    {/* Forward button */}
     <button 
       className={`${styles.arrow} ${styles.right}`} 
       onClick={() => setCurrent(current < (files.length - 1) ? (current + 1) : 0)}
     >
       <Image
-        src="images/handwritten/Arrows Right Black.png"
+        src="images/handwritten/Arrows Right.png"
         alt="Next image"
-        width="50"
+        width="80"
         height="50"
       />
     </button>
-    {/* Logo */}
     <Link href="/portfolio">
+      {/* Logo */}
       <Image
         src="images/handwritten/CAArchitects_LogoWhite.png"
         alt="Conrad Margoles Architects logo"
@@ -80,6 +78,7 @@ export default function Landing ({ files }: Props) {
         width="300"
         height="100"
       />
+      {/* Gallery */}
       <section>
         {files.map((file, index) => (
           <div className={index === current ? `${styles.slide} ${styles.active}` : styles.slide} key={index}>
