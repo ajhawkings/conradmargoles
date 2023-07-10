@@ -27,18 +27,42 @@ export async function getStaticProps ({ params }: { params: { id: string } }) {
     }
   }
 }
+
+function Mobile ({ project }: { project: ProjectType }) {
+  const [width] = useViewport()
+
+  if (width < 1000) {
+    return <div className={styles.mcontainer}>
+      <Image
+        src={project.textMobile}
+        alt="Text describing architectural project"
+        className={styles.text}
+        width="983"
+        height="1267"
+      />
+      <button 
+        className={styles.top}
+        type="button" 
+        title="Back to top" 
+        onClick={() => window.scrollTo(0,0)}
+      >
+        <Image
+          src="/images/handwritten/Arrows Right Black.png"
+          alt="Back to top"
+          height="43"
+          width="43"
+        />
+      </button>
+    </div>
+  }
+  return null
+}
       
 export default function Project ({ project }: { project: ProjectType }) {
   const [width] = useViewport()
-  console.log('test')
+
   const photos = project.photos
-  if (width < 1000) { 
-    // sort by last number in filename
-    photos.sort((a, b) => Number(a.src.slice(a.src.lastIndexOf(' ') + 1).split('.')[0]) - Number(b.src.slice(b.src.lastIndexOf(' ') + 1).split('.')[0]))
-  } else {
-    // sort alphabetically
-    photos.sort((a, b) => a.src.localeCompare(b.src))
-  }
+  const length = photos.length - 1
 
   const [position, setPosition] = useState(0)
   const [distance, setDistance] = useState(0)
@@ -58,12 +82,10 @@ export default function Project ({ project }: { project: ProjectType }) {
       setDistance(0)
     }
   }, [galleryRef, position, width])
-  
-  const length = photos.length - 1
 
   return <>
     <Head>
-      <title>Project | Conrad Margoles Architects</title>
+      <title>{`${project.name} | Conrad Margoles Architects`}</title>
     </Head>
     <Wrapper>
       <div className={styles.root}>
@@ -84,10 +106,11 @@ export default function Project ({ project }: { project: ProjectType }) {
                 alt={project.name}
                 width={photo.width}
                 height={photo.height}
-                className={(photo.width || 0) > 1500 ? styles.landscape : styles.portrait}
+                className={styles.photo}
               />
             ))}
           </div>
+          <Mobile project={project} />
         </div>
         <button className={`${styles.arrow} ${styles.right}`} onClick={() => setPosition((position < length) ? (position + 1) : 0)}>
           <Image
