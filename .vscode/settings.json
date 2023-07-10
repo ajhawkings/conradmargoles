@@ -4,6 +4,8 @@
     "camelcase",
     "conradmargoles",
     "Margoles",
+    "mcontainer",
+    "mimage",
     "nosniff",
     "paren",
     "pwsh",

@@ -1,9 +1,11 @@
 import { promises } from 'fs'
 import { useState } from 'react'
+import useViewport from '@lib/useViewport'
 
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import Wrapper from '@components/wrapper'
 
 import styles from '@styles/Landing.module.css'
 
@@ -20,6 +22,26 @@ interface Props {
 
 export default function Landing ({ files }: Props) {
   const [current, setCurrent] = useState(0)
+  const [width] = useViewport()
+
+  if (width < 1000) {
+    return <>
+      <Head>
+        <title>Conrad Margoles Architects</title>
+      </Head>
+      <div className={styles.mcontainer}>
+        <Wrapper>
+          <Image
+            src="images/projects/(01) Head Heart Hand House Home/Image 1.jpg"
+            alt="Landing page image"
+            width="1000"
+            height="1500"
+            className={styles.mimage}
+          />
+        </Wrapper>
+      </div>
+    </>
+  }
 
   return <>
     <Head>

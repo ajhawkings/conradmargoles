@@ -44,3 +44,17 @@
   transition-delay: 1s;
   opacity: 1;
 }
+
+.mcontainer,
+.mcontainer main {
+  height: 100vh;
+  width: 100vw;
+  overflow: clip;
+}
+
+.mimage {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  padding: 0 1rem;
+}
