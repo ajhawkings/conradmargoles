@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import styles from '@styles/Project.module.css'
 import useViewport from '@lib/useViewport'
 
+import BackToTop from '@components/top'
 import Head from 'next/head'
 import Image from 'next/image'
 import Wrapper from '@components/wrapper'
@@ -26,39 +27,6 @@ export async function getStaticProps ({ params }: { params: { id: string } }) {
       project
     }
   }
-}
-
-// Text and back to top button for mobile
-function Mobile ({ project }: { project: ProjectType }) {
-  const [width] = useViewport()
-
-  if (width < 1000) {
-    return <div className={styles.mcontainer}>
-      {/* Mobile text */}
-      <Image
-        src={project.textMobile}
-        alt="Text describing architectural project"
-        className={styles.text}
-        width="983"
-        height="1267"
-      />
-      {/* Back to top button */}
-      <button 
-        className={styles.top}
-        type="button" 
-        title="Back to top" 
-        onClick={() => window.scrollTo(0,0)}
-      >
-        <Image
-          src="/images/handwritten/Arrows Right.png"
-          alt="Back to top"
-          height="43"
-          width="43"
-        />
-      </button>
-    </div>
-  }
-  return null
 }
       
 export default function Project ({ project }: { project: ProjectType }) {
@@ -123,7 +91,20 @@ export default function Project ({ project }: { project: ProjectType }) {
               />
             ))}
           </div>
-          <Mobile project={project} />
+          {width < 1000 &&
+            <div className={styles.mcontainer}>
+              {/* Mobile text */}
+              <Image
+                src={project.textMobile}
+                alt="Text describing architectural project"
+                className={styles.text}
+                width="983"
+                height="1267"
+              />
+              {/* Back to top button */}
+              <BackToTop />
+            </div>
+          }
         </div>
       </div>
     </Wrapper>

@@ -60,9 +60,4 @@
     width: 100%;
     height: auto;
   }
-  .top {
-    background: none;
-    rotate: 270deg;
-    padding: 1rem 0 1rem 1rem;
-  }
 }
