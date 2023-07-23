@@ -64,7 +64,7 @@ export default function Project ({ project }: { project: ProjectType }) {
           <Image
             src="/images/handwritten/Arrows Left.png"
             alt="Previous image"
-            width="80"
+            width="70"
             height="60"
           />
         </button>
@@ -73,7 +73,7 @@ export default function Project ({ project }: { project: ProjectType }) {
           <Image
             src="/images/handwritten/Arrows Right.png"
             alt="Next image"
-            width="100"
+            width="90"
             height="50"
           />
         </button>
