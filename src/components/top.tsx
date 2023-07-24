@@ -15,7 +15,7 @@ export default function Top () {
         src="/images/handwritten/Arrows Right.png"
         alt="Back to top"
         height="50"
-        width="70"
+        width="80"
       />
     </button>
   </>

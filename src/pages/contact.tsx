@@ -14,7 +14,7 @@ export default function Studio () {
     </Head>
     <Wrapper>
       <div className={`${styles.container} ${styles.contact}`}>
-        {width < 1000 && <>
+        {width <= 1000 && <>
           <Image
             src="/images/contact/map_mobile.jpg"
             alt="Map showing location of studio"
@@ -26,7 +26,7 @@ export default function Studio () {
             fill
           />
         </>}
-        {width > 1001 && <>
+        {width >= 1001 && <>
           <Image
             src="/images/contact/map_desktop.jpg"
             alt="Map showing location of studio"

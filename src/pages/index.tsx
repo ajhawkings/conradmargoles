@@ -22,7 +22,7 @@ export default function Landing ({ files }: Props) {
   const [current, setCurrent] = useState(0)
   const [width] = useViewport()
 
-  if (width < 1000) {
+  if (width <= 1000) {
     return <>
       <Head>
         <title>Conrad Margoles Architects</title>

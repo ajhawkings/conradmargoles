@@ -3,7 +3,7 @@
   padding: 1rem;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1001px) {
   .container {
     margin: 0 max(0px, calc(50vw - 1000px));
   }
@@ -22,13 +22,13 @@
 }
 
 .logo {
-  width: min(60vw, 300px);
+  width: min(60vw, 320px);
   height: auto;
 }
 
 .main {
   min-width: 0;
-  margin-left: 320px;
+  margin-left: 345px;
 }
 
 .menu {
@@ -39,13 +39,13 @@
 
 .menuItems {
   display: grid;
-  grid-template-rows: 38px 32px 29px;
+  grid-template-rows: 28px 26px 23px;
   justify-content: center;
   gap: 1rem;
 }
 
 .menuItems :nth-child(3) {
-  margin-top: 10px;
+  margin-top: 7%;
 }
 
 .menuItem {
@@ -74,6 +74,7 @@
   .nav {
     flex-direction: row;
     flex: unset;
+    align-items: center;
     justify-content: space-between;
     position: unset;
   }
@@ -91,6 +92,7 @@
     background-color: white;
     padding: 1rem 0 2rem;
     z-index: 1;
+    grid-template-rows: 36px 32px 30px;
   }
 
   .menuItem {

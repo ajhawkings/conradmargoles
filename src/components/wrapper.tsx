@@ -25,7 +25,7 @@ export default function Wrapper ({ children }: { children: ReactNode }) {
             className={styles.logo}
           />
         </Link>
-        {(width < 1000) &&
+        {(width <= 1000) &&
           <button className={styles.menu} onClick={() => setExpanded(!expanded)}>
             <Image
               src="/images/handwritten/Burger Menu.png"
@@ -35,7 +35,7 @@ export default function Wrapper ({ children }: { children: ReactNode }) {
             />
           </button>
         }
-        {(width > 1000 || expanded) &&
+        {(width >= 1001 || expanded) &&
           <div className={styles.menuItems}>
             {menuItems.map((item) => (
               <Link

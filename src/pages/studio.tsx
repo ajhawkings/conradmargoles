@@ -16,7 +16,7 @@ export default function Studio () {
     </Head>
     <Wrapper>
       <div className={styles.container}>
-        {width < 1000 && <>
+        {width <= 1000 && <>
           <Image
             src="/images/studio/photo_mobile.jpg"
             alt="Photo of architectural studio"
@@ -28,7 +28,7 @@ export default function Studio () {
             fill
           />
         </>}
-        {width > 1001 && <>
+        {width >= 1001 && <>
           {(imageRef.current?.clientWidth ?? 501) > 500 &&
             <Image
               src="/images/studio/photo_desktop.jpg"

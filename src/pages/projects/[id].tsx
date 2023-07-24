@@ -39,7 +39,7 @@ export default function Project ({ project }: { project: ProjectType }) {
   const galleryRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (width > 1000) {
+    if (width >= 1001) {
       // Get the widths of all the images before the current one
       const imageWidths = Array.from(galleryRef?.current?.children ?? []).slice(0, position)
       // Sum the widths of all the images before the current one
@@ -64,8 +64,8 @@ export default function Project ({ project }: { project: ProjectType }) {
           <Image
             src="/images/handwritten/Arrows Left.png"
             alt="Previous image"
-            width="70"
-            height="60"
+            width="60"
+            height="50"
           />
         </button>
         {/* Right arrow */}
@@ -73,8 +73,8 @@ export default function Project ({ project }: { project: ProjectType }) {
           <Image
             src="/images/handwritten/Arrows Right.png"
             alt="Next image"
-            width="90"
-            height="50"
+            width="75"
+            height="40"
           />
         </button>
         {/* Sliding image gallery */}
@@ -91,7 +91,7 @@ export default function Project ({ project }: { project: ProjectType }) {
               />
             ))}
           </div>
-          {width < 1000 &&
+          {width <= 1000 &&
             <div className={styles.mcontainer}>
               {/* Mobile text */}
               <Image

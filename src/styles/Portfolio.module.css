@@ -19,7 +19,7 @@
   background-color: var(--light-grey);
   padding: 0.8rem;
   z-index: 1;
-  height: 650px;
+  height: min(70vh, 650px);
   width: auto;
   min-width: auto;
 }
