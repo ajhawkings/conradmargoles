@@ -18,12 +18,12 @@ export default function Studio () {
       <div className={styles.container}>
         {width <= 1000 && <>
           <Image
-            src="/images/studio/photo_mobile.jpg"
+            src="/images/studio/Photo_mobile.jpg"
             alt="Photo of architectural studio"
             fill
           />
           <Image
-            src="/images/studio/studio_mobile.png"
+            src="/images/studio/Studio_mobile.png"
             alt="Text describing the studio and team"
             fill
           />
@@ -31,7 +31,7 @@ export default function Studio () {
         {width >= 1001 && <>
           {(imageRef.current?.clientWidth ?? 501) > 500 &&
             <Image
-              src="/images/studio/photo_desktop.jpg"
+              src="/images/studio/Photo_desktop.jpg"
               alt="Photo of architectural studio"
               fill
               className={styles.image}
@@ -40,14 +40,14 @@ export default function Studio () {
           } 
           <div className={styles.text}>
             <Image 
-              src="/images/studio/studio_desktop.png"
+              src="/images/studio/Studio_desktop.png"
               alt="Text describing the studio"
               fill
             />
           </div>
           <div className={styles.text}>
             <Image
-              src="/images/studio/team_desktop.png"
+              src="/images/studio/Team_desktop.png"
               alt="Text describing the team"
               fill
             />

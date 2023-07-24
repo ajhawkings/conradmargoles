@@ -16,26 +16,26 @@ export default function Studio () {
       <div className={`${styles.container} ${styles.contact}`}>
         {width <= 1000 && <>
           <Image
-            src="/images/contact/map_mobile.jpg"
+            src="/images/contact/Map_mobile.jpg"
             alt="Map showing location of studio"
             fill
           />
           <Image
-            src="/images/contact/contact_mobile.png"
+            src="/images/contact/Contact_mobile.png"
             alt="Text with contact information"
             fill
           />
         </>}
         {width >= 1001 && <>
           <Image
-            src="/images/contact/map_desktop.jpg"
+            src="/images/contact/Map_desktop.jpg"
             alt="Map showing location of studio"
             fill
             className={styles.map}
           />
           <div className={styles.text}>
             <Image
-              src="/images/contact/contact_desktop.png"
+              src="/images/contact/Contact_desktop.png"
               alt="Text with contact information"
               fill
             />
