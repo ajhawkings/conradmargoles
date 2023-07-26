@@ -93,7 +93,7 @@ export default function Project ({ project }: { project: ProjectType }) {
             ))}
           </div>
           {width <= 1000 &&
-            <div className={styles.mcontainer}>
+            <>
               {/* Mobile text */}
               <Image
                 src={project.textMobile}
@@ -104,7 +104,7 @@ export default function Project ({ project }: { project: ProjectType }) {
               />
               {/* Back to top button */}
               <BackToTop />
-            </div>
+            </>
           }
         </div>
       </div>

@@ -1,5 +1,6 @@
 import useViewport from '@lib/useViewport'
 
+import BackToTop from '@components/top'
 import Head from 'next/head'
 import Image from 'next/image'
 import Wrapper from '@components/wrapper'
@@ -26,6 +27,7 @@ export default function Studio () {
             alt="Text with contact information"
             fill
           />
+          <BackToTop />
         </>}
         {width >= 1001 && <>
           <Image

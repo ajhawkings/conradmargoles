@@ -51,14 +51,9 @@
   .photo {
     width: 100%;
   }
-  .mcontainer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 5rem;
-  }
   .text {
     width: 100%;
     height: auto;
+    margin-bottom: 5rem;
   }
 }

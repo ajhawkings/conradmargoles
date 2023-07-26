@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import useViewport from '@lib/useViewport'
 
+import BackToTop from '@components/top'
 import Head from 'next/head'
 import Image from 'next/image'
 import Wrapper from '@components/wrapper'
@@ -28,6 +29,7 @@ export default function Studio () {
             alt="Text describing the studio and team"
             fill
           />
+          <BackToTop />
         </>}
         {width >= 1001 && <>
           {(imageRef.current?.clientWidth ?? 501) > 500 &&

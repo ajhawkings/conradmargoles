@@ -1,5 +1,7 @@
 import { ProjectType, getProjects } from '@lib/projects'
+import useViewport from '@lib/useViewport'
 
+import BackToTop from '@components/top'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -18,6 +20,8 @@ export async function getStaticProps () {
 }
 
 export default function Portfolio (props: { projects: ProjectType[] }) {
+  const [width] = useViewport()
+
   return <>
     <Head>
       <title>Portfolio | Conrad Margoles Architects</title>
@@ -41,6 +45,9 @@ export default function Portfolio (props: { projects: ProjectType[] }) {
           />
         </Link>
       ))}
+      {width <= 1000 &&
+        <BackToTop />
+      }
     </Wrapper>
   </>
 }
