@@ -1,10 +1,11 @@
-import styles from '@styles/Pages.module.css'
 import { useRef } from 'react'
 import useViewport from '@lib/useViewport'
 
 import Head from 'next/head'
 import Image from 'next/image'
 import Wrapper from '@components/wrapper'
+
+import styles from '@styles/Pages.module.css'
 
 export default function Studio () {
   const [width] = useViewport()

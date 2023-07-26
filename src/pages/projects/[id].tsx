@@ -1,12 +1,13 @@
 import { ProjectType, getProjects } from '@lib/projects'
 import { useEffect, useRef, useState } from 'react'
-import styles from '@styles/Project.module.css'
 import useViewport from '@lib/useViewport'
 
 import BackToTop from '@components/top'
 import Head from 'next/head'
 import Image from 'next/image'
 import Wrapper from '@components/wrapper'
+
+import styles from '@styles/Project.module.css'
 
 export async function getStaticPaths () {
   const projects = await getProjects()
