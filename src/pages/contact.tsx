@@ -22,11 +22,15 @@ export default function Studio () {
             alt="Map showing location of studio"
             fill
           />
-          <Image
-            src="/images/contact/Contact_mobile.png"
-            alt="Text with contact information"
-            fill
-          />
+          <div className={styles.text}>
+            <Image
+              src="/images/contact/Contact_mobile.png"
+              alt="Text with contact information"
+              fill
+            />
+            <a className={styles.email} href="mailto:studio@conradmargoles.com" aria-label="mailto:studio@conradmargoles.com"></a>
+            <a className={styles.phone} href="tel:+442087805166" aria-label="Telephone number: +442087805166"></a>
+          </div>
           <BackToTop />
         </>}
         {width >= 1001 && <>
@@ -42,6 +46,8 @@ export default function Studio () {
               alt="Text with contact information"
               fill
             />
+            <a className={styles.email} href="mailto:studio@conradmargoles.com" aria-label="mailto:studio@conradmargoles.com"></a>
+            <a className={styles.phone} href="tel:+442087805166" aria-label="Telephone number: +442087805166"></a>
           </div>
         </>}
       </div>

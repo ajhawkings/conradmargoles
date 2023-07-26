@@ -17,6 +17,10 @@
   .contact {
     justify-content: space-between;
   }
+
+  .text {
+    background-color: #ebebed;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -26,7 +30,7 @@
     width: 100%;
   }
 
-  .container img:first-child {
+  .container > img:first-child {
     aspect-ratio: 1/1;
     object-fit: cover;
   }
@@ -42,10 +46,6 @@
   min-width: 0;
 }
 
-.text {
-  background-color: #ebebed;
-}
-
 .text > img {
   width: auto !important;
   position: relative !important;
@@ -55,4 +55,34 @@
   width: auto !important;
   min-width: 0;
   object-fit: cover;
+}
+
+.contact a {
+  height: 30px !important;
+  width: 100%;
+  position: absolute !important;
+  left: 0px;
+}
+
+.email {
+  bottom: 12%;
+}
+
+.phone {
+  bottom: 8%;
+}
+
+@media (max-width: 1000px) {
+  .text > img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .email {
+    bottom: 42%;
+  }
+
+  .phone {
+    bottom: 25%;
+  }
 }
