@@ -22,13 +22,12 @@ export const usePreserveScroll = () => {
       }
     }
 
-    const executeEvents = () => {
-      router.events.on('routeChangeStart', onRouteChangeStart)
-      router.events.on('routeChangeComplete', onRouteChangeComplete)
+    router.events.on('routeChangeStart', onRouteChangeStart)
+    router.events.on('routeChangeComplete', onRouteChangeComplete)
+
+    return () => {
+      router.events.off('routeChangeStart', onRouteChangeStart)
+      router.events.off('routeChangeComplete', onRouteChangeComplete)
     }
-
-    executeEvents()
-
-    return () => executeEvents()
   }, [router])
 }
