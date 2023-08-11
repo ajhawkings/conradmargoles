@@ -51,10 +51,10 @@ export default function Landing ({ files }: Props) {
       onClick={() => setCurrent(current > 0 ? (current - 1) : (files.length - 1))}
     >
       <Image
-        src="images/handwritten/Arrows Left.png"
+        src="images/handwritten/Arrows Left White.png"
         alt="Previous image"
-        width="70"
-        height="60"
+        width="55"
+        height="55"
       />
     </button>
     {/* Forward button */}
@@ -63,10 +63,10 @@ export default function Landing ({ files }: Props) {
       onClick={() => setCurrent(current < (files.length - 1) ? (current + 1) : 0)}
     >
       <Image
-        src="images/handwritten/Arrows Right.png"
+        src="images/handwritten/Arrows Right White.png"
         alt="Next image"
-        width="90"
-        height="50"
+        width="45"
+        height="40"
       />
     </button>
     <Link href="/portfolio">

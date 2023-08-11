@@ -10,7 +10,7 @@
 .arrow {
   all: unset;
   position: absolute;
-  top: 50%;
+  top: 58%;
   transform: translateY(-50%);
   left: 1rem;
   cursor: pointer;
@@ -18,7 +18,7 @@
 }
 
 .right {
-  right: 1rem;
+  right: 1.3rem;
   left: auto;
 }
 
