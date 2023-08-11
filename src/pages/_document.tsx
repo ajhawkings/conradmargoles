@@ -6,6 +6,7 @@ export default function Document () {
       <Head>
         <meta name='theme-color' content='#000000' />
         <link rel='icon' href='favicon.ico' />
+        <link rel='icon' href='favicon_alt.ico' media="(prefers-color-scheme: dark)"/>
         {/* Search Engines */}
         <meta name='description' content='Conrad Margoles Architects' />
         <meta name='image' content='/images/handwritten/CAArchitects_Logo.png' />
