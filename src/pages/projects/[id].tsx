@@ -5,6 +5,7 @@ import useViewport from '@lib/useViewport'
 import BackToTop from '@components/top'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import Wrapper from '@components/wrapper'
 
 import styles from '@styles/Project.module.css'
@@ -78,6 +79,14 @@ export default function Project ({ project }: { project: ProjectType }) {
             height="40"
           />
         </button>
+        <Link href="/portfolio" className={styles.close}>
+          <Image
+            src="/images/handwritten/X.png"
+            alt="Close project"
+            width="100"
+            height="100"
+          />
+        </Link>
         {/* Sliding image gallery */}
         <div className={styles.container}>
           <div className={styles.slider} ref={galleryRef} style={{ transform: `translateX(-${distance}px)` }}>
