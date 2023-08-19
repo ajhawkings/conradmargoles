@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from 'react'
 import useViewport from '@lib/useViewport'
 
 import BackToTop from '@components/top'
+import ExportedImage from 'next-image-export-optimizer'
 import Head from 'next/head'
-import Image from 'next/image'
 import Link from 'next/link'
 import Wrapper from '@components/wrapper'
 
@@ -63,7 +63,7 @@ export default function Project ({ project }: { project: ProjectType }) {
       <div className={styles.root}>
         {/* Left arrow */}
         <button className={styles.arrow} onClick={() => setPosition((position > 0) ? (position - 1) : length)}>
-          <Image
+          <ExportedImage
             src="/images/handwritten/Arrows Left.png"
             alt="Previous image"
             width="60"
@@ -72,7 +72,7 @@ export default function Project ({ project }: { project: ProjectType }) {
         </button>
         {/* Right arrow */}
         <button className={`${styles.arrow} ${styles.right}`} onClick={() => setPosition((position < length) ? (position + 1) : 0)}>
-          <Image
+          <ExportedImage
             src="/images/handwritten/Arrows Right.png"
             alt="Next image"
             width="75"
@@ -80,7 +80,7 @@ export default function Project ({ project }: { project: ProjectType }) {
           />
         </button>
         <Link href="/portfolio" className={styles.close}>
-          <Image
+          <ExportedImage
             src="/images/handwritten/X.png"
             alt="Close project"
             width="100"
@@ -91,7 +91,7 @@ export default function Project ({ project }: { project: ProjectType }) {
         <div className={styles.container}>
           <div className={styles.slider} ref={galleryRef} style={{ transform: `translateX(-${distance}px)` }}>
             {project.photos.map((photo) => (
-              <Image
+              <ExportedImage
                 key={photo.src}
                 src={photo.src}
                 alt={project.name}
@@ -104,7 +104,7 @@ export default function Project ({ project }: { project: ProjectType }) {
           {width <= 1000 &&
             <>
               {/* Mobile text */}
-              <Image
+              <ExportedImage
                 src={project.textMobile}
                 alt="Text describing architectural project"
                 className={styles.text}

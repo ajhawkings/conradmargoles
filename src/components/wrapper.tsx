@@ -1,7 +1,7 @@
 import { ReactNode, useState } from 'react'
 import useViewport from '@lib/useViewport'
 
-import Image from 'next/image'
+import ExportedImage from 'next-image-export-optimizer'
 import Link from 'next/link'
 
 import styles from '@styles/Wrapper.module.css'
@@ -17,7 +17,7 @@ export default function Wrapper ({ children }: { children: ReactNode }) {
     <div className={styles.container}>
       <nav className={styles.nav}>
         <Link href="/">
-          <Image
+          <ExportedImage
             src="/images/handwritten/CAArchitects_Logo.png"
             alt="Conrad Margoles Architects logo"
             width="300"
@@ -27,7 +27,7 @@ export default function Wrapper ({ children }: { children: ReactNode }) {
         </Link>
         {(width <= 1000) &&
           <button className={styles.menu} onClick={() => setExpanded(!expanded)}>
-            <Image
+            <ExportedImage
               src="/images/handwritten/Burger Menu.png"
               alt="Burger menu"
               width="90"
@@ -44,7 +44,7 @@ export default function Wrapper ({ children }: { children: ReactNode }) {
                 key={item} 
                 onClick={() => setExpanded(false)}
               >
-                <Image
+                <ExportedImage
                   src={`/images/handwritten/${item}.png`}
                   alt={item}
                   width="0"

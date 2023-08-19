@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import ExportedImage from 'next-image-export-optimizer'
 
 import styles from '@styles/Top.module.css'
 
@@ -12,7 +12,7 @@ export default function Top () {
         title="Back to top"
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
-        <Image
+        <ExportedImage
           src="/images/handwritten/Arrows Right.png"
           alt="Back to top"
           height="50"

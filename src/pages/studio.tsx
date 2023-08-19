@@ -2,8 +2,8 @@ import { useRef } from 'react'
 import useViewport from '@lib/useViewport'
 
 import BackToTop from '@components/top'
+import ExportedImage from 'next-image-export-optimizer'
 import Head from 'next/head'
-import Image from 'next/image'
 import Wrapper from '@components/wrapper'
 
 import styles from '@styles/Pages.module.css'
@@ -19,12 +19,12 @@ export default function Studio () {
     <Wrapper>
       <div className={styles.container}>
         {width <= 1000 && <>
-          <Image
+          <ExportedImage
             src="/images/studio/Photo_mobile.jpg"
             alt="Photo of architectural studio"
             fill
           />
-          <Image
+          <ExportedImage
             src="/images/studio/Studio_mobile.png"
             alt="Text describing the studio and team"
             fill
@@ -34,7 +34,7 @@ export default function Studio () {
         </>}
         {width >= 1001 && <>
           {(imageRef.current?.clientWidth ?? 501) > 500 &&
-            <Image
+            <ExportedImage
               src="/images/studio/Photo_desktop.jpg"
               alt="Photo of architectural studio"
               fill
@@ -43,14 +43,14 @@ export default function Studio () {
             />
           } 
           <div className={styles.text}>
-            <Image 
+            <ExportedImage 
               src="/images/studio/Studio_desktop.png"
               alt="Text describing the studio"
               fill
             />
           </div>
           <div className={styles.text}>
-            <Image
+            <ExportedImage
               src="/images/studio/Team_desktop.png"
               alt="Text describing the team"
               fill

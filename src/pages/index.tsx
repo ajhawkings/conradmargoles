@@ -2,8 +2,8 @@ import { promises } from 'fs'
 import { useState } from 'react'
 import useViewport from '@lib/useViewport'
 
+import ExportedImage from 'next-image-export-optimizer'
 import Head from 'next/head'
-import Image from 'next/image'
 import Link from 'next/link'
 import Wrapper from '@components/wrapper'
 
@@ -29,7 +29,7 @@ export default function Landing ({ files }: Props) {
       </Head>
       <div className={styles.mcontainer}>
         <Wrapper>
-          <Image
+          <ExportedImage
             src="images/projects/(01) Head Heart Hand House Home/Image 1.jpg"
             alt="Landing page image"
             width="1000"
@@ -50,7 +50,7 @@ export default function Landing ({ files }: Props) {
       className={styles.arrow} 
       onClick={() => setCurrent(current > 0 ? (current - 1) : (files.length - 1))}
     >
-      <Image
+      <ExportedImage
         src="images/handwritten/Arrows Left White.png"
         alt="Previous image"
         width="55"
@@ -62,7 +62,7 @@ export default function Landing ({ files }: Props) {
       className={`${styles.arrow} ${styles.right}`} 
       onClick={() => setCurrent(current < (files.length - 1) ? (current + 1) : 0)}
     >
-      <Image
+      <ExportedImage
         src="images/handwritten/Arrows Right White.png"
         alt="Next image"
         width="45"
@@ -71,7 +71,7 @@ export default function Landing ({ files }: Props) {
     </button>
     <Link href="/portfolio">
       {/* Logo */}
-      <Image
+      <ExportedImage
         src="images/handwritten/CAArchitects_LogoWhite.png"
         alt="Conrad Margoles Architects logo"
         className={styles.logo}
@@ -82,7 +82,7 @@ export default function Landing ({ files }: Props) {
       <section>
         {files.map((file, index) => (
           <div className={index === current ? `${styles.slide} ${styles.active}` : styles.slide} key={index}>
-            <Image 
+            <ExportedImage 
               src={`images/home/${file}`} 
               alt="Architectural project" 
               className={styles.image} 

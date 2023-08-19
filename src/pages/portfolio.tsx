@@ -2,8 +2,8 @@ import { ProjectType, getProjects } from '@lib/projects'
 import useViewport from '@lib/useViewport'
 
 import BackToTop from '@components/top'
+import ExportedImage from 'next-image-export-optimizer'
 import Head from 'next/head'
-import Image from 'next/image'
 import Link from 'next/link'
 import Wrapper from '@components/wrapper'
 
@@ -29,14 +29,14 @@ export default function Portfolio (props: { projects: ProjectType[] }) {
     <Wrapper>
       {props.projects.map((project: ProjectType) => (
         <Link href={`/projects/${project.path}`} className={styles.project} key={project.name}>
-          <Image
+          <ExportedImage
             src={project.cover}
             alt={project.name}
             width="2000"
             height="1335"
             className={styles.image}
           />
-          <Image
+          <ExportedImage
             src={project.textDesktop}
             alt={project.name}
             width="500"
