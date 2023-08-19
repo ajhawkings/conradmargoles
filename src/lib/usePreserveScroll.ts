@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 export const usePreserveScroll = () => {
   const router = useRouter()
 
-  const scrollPositions = useRef<{ [url: string]: number }>({})
+  const scrollPositions = useRef<Record<string, number>>({})
 
   useEffect(() => {
     const onRouteChangeStart = () => {

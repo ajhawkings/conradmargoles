@@ -23,7 +23,7 @@ export async function getStaticPaths () {
 
 export async function getStaticProps ({ params }: { params: { id: string } }) {
   const projects = await getProjects()
-  const project = projects.find((project) => project.path === params.id) || { name: 'Not Found' }
+  const project = projects.find((project) => project.path === params.id) ?? { name: 'Not Found' }
   return {
     props: {
       project
@@ -43,7 +43,7 @@ export default function Project ({ project }: { project: ProjectType }) {
   useEffect(() => {
     if (width >= 1001) {
       // Get the widths of all the images before the current one
-      const imageWidths = Array.from(galleryRef?.current?.children ?? []).slice(0, position)
+      const imageWidths = Array.from(galleryRef.current?.children ?? []).slice(0, position)
       // Sum the widths of all the images before the current one
       let sum = imageWidths.reduce((sum, element) => (sum + element.clientWidth), 0)
       // Add the margin between images
@@ -62,7 +62,7 @@ export default function Project ({ project }: { project: ProjectType }) {
     <Wrapper>
       <div className={styles.root}>
         {/* Left arrow */}
-        <button className={styles.arrow} onClick={() => setPosition((position > 0) ? (position - 1) : length)}>
+        <button className={styles.arrow} onClick={() => { setPosition((position > 0) ? (position - 1) : length) }}>
           <ExportedImage
             src="/images/handwritten/Arrows Left.png"
             alt="Previous image"
@@ -71,7 +71,7 @@ export default function Project ({ project }: { project: ProjectType }) {
           />
         </button>
         {/* Right arrow */}
-        <button className={`${styles.arrow} ${styles.right}`} onClick={() => setPosition((position < length) ? (position + 1) : 0)}>
+        <button className={`${styles.arrow} ${styles.right}`} onClick={() => { setPosition((position < length) ? (position + 1) : 0) }}>
           <ExportedImage
             src="/images/handwritten/Arrows Right.png"
             alt="Next image"

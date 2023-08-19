@@ -27,7 +27,7 @@ export default function Wrapper ({ children }: { children: ReactNode }) {
           />
         </Link>
         {(width <= 1000) &&
-          <button className={styles.menu} onClick={() => setExpanded(!expanded)}>
+          <button className={styles.menu} onClick={() => { setExpanded(!expanded) }}>
             <ExportedImage
               src="/images/handwritten/Burger Menu.png"
               alt="Burger menu"
@@ -44,7 +44,7 @@ export default function Wrapper ({ children }: { children: ReactNode }) {
                 className={styles.menuItem}
                 href={`/${item.toLowerCase()}`} 
                 key={item} 
-                onClick={() => setExpanded(false)}
+                onClick={() => { setExpanded(false) }}
               >
                 <ExportedImage
                   src={`/images/handwritten/${item}.png`}

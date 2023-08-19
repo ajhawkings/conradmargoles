@@ -48,7 +48,7 @@ export default function Landing ({ files }: Props) {
     {/* Back button */}
     <button 
       className={styles.arrow} 
-      onClick={() => setCurrent(current > 0 ? (current - 1) : (files.length - 1))}
+      onClick={() => { setCurrent(current > 0 ? (current - 1) : (files.length - 1)) }}
     >
       <ExportedImage
         src="images/handwritten/Arrows Left White.png"
@@ -60,7 +60,7 @@ export default function Landing ({ files }: Props) {
     {/* Forward button */}
     <button 
       className={`${styles.arrow} ${styles.right}`} 
-      onClick={() => setCurrent(current < (files.length - 1) ? (current + 1) : 0)}
+      onClick={() => { setCurrent(current < (files.length - 1) ? (current + 1) : 0) }}
     >
       <ExportedImage
         src="images/handwritten/Arrows Right White.png"

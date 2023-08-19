@@ -10,7 +10,7 @@ export default function Top () {
         className={styles.top}
         type="button"
         title="Back to top"
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }) }}
       >
         <ExportedImage
           src="/images/handwritten/Arrows Right.png"
