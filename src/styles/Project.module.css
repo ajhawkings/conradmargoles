@@ -23,8 +23,8 @@
 }
 
 .photo {
-  height: auto;
-  width: auto;
+  width: auto !important;
+  position: relative !important;
 }
 
 .arrow {
@@ -67,7 +67,8 @@
     height: auto;
   }
   .photo {
-    width: 100%;
+    height: auto !important;
+    width: 100% !important;
   }
   .text {
     width: 112%;

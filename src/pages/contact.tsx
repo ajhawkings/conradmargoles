@@ -26,7 +26,8 @@ export default function Studio () {
             <ExportedImage
               src="/images/contact/Contact_mobile.png"
               alt="Text with contact information"
-              fill
+              width={1527}
+              height={1123}
             />
             <a className={styles.email} href="mailto:studio@conradmargoles.com" aria-label="mailto:studio@conradmargoles.com"></a>
             <a className={styles.phone} href="tel:+442087805166" aria-label="Telephone number: +442087805166"></a>

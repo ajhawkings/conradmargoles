@@ -79,6 +79,7 @@ export default function Project ({ project }: { project: ProjectType }) {
             height="40"
           />
         </button>
+        {/* Close button */}
         <Link href="/portfolio" className={styles.close}>
           <ExportedImage
             src="/images/handwritten/X.png"
@@ -92,11 +93,10 @@ export default function Project ({ project }: { project: ProjectType }) {
           <div className={styles.slider} ref={galleryRef} style={{ transform: `translateX(-${distance}px)` }}>
             {project.photos.map((photo) => (
               <ExportedImage
-                key={photo.src}
-                src={photo.src}
+                key={photo}
+                src={photo}
                 alt={project.name}
-                width={photo.width}
-                height={photo.height}
+                fill
                 className={styles.photo}
               />
             ))}

@@ -8,7 +8,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "image-size": "^1.0.2",
     "next": "13.4.8",
     "next-image-export-optimizer": "^1.8.3",
     "react": "18.2.0",

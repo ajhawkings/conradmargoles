@@ -23,6 +23,7 @@ export default function Wrapper ({ children }: { children: ReactNode }) {
             width="300"
             height="100"
             className={styles.logo}
+            placeholder='empty'
           />
         </Link>
         {(width <= 1000) &&
@@ -32,6 +33,7 @@ export default function Wrapper ({ children }: { children: ReactNode }) {
               alt="Burger menu"
               width="90"
               height="90"
+              placeholder='empty'
             />
           </button>
         }
@@ -51,6 +53,7 @@ export default function Wrapper ({ children }: { children: ReactNode }) {
                   height="0"
                   sizes="100vw"
                   className={styles.image}
+                  placeholder='empty'
                 />
               </Link>
             ))}

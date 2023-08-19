@@ -27,7 +27,8 @@ export default function Studio () {
           <ExportedImage
             src="/images/studio/Studio_mobile.png"
             alt="Text describing the studio and team"
-            fill
+            width={903}
+            height={3850}
             className={styles.description}
           />
           <BackToTop />
