@@ -11,6 +11,7 @@ import styles from '@styles/Landing.module.css'
 
 export async function getStaticProps () {
   const files: string[] = await promises.readdir('public/images/home')
+  files.splice(files.indexOf('nextImageExportOptimizer'), 1)
   return { props: { files } }
 }
 
