@@ -30,8 +30,8 @@ export default function Wrapper ({ children }: { children: ReactNode }) {
             <Image
               src="/images/handwritten/Burger Menu.png"
               alt="Burger menu"
-              width="80"
-              height="80"
+              width="90"
+              height="90"
             />
           </button>
         }
