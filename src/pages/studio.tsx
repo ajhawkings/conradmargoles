@@ -28,6 +28,7 @@ export default function Studio () {
             src="/images/studio/Studio_mobile.png"
             alt="Text describing the studio and team"
             fill
+            className={styles.description}
           />
           <BackToTop />
         </>}

@@ -28,6 +28,7 @@
     flex-direction: column;
     justify-content: start;
     width: 100%;
+    overflow: hidden;
   }
 
   .container > img:first-child {
@@ -58,7 +59,7 @@
 }
 
 .contact a {
-  height: 30px !important;
+  height: 35px !important;
   width: 100%;
   position: absolute !important;
   left: 0px;
@@ -69,13 +70,19 @@
 }
 
 .phone {
-  bottom: 8%;
+  bottom: 7%;
 }
 
 @media (max-width: 1000px) {
   .text > img {
-    max-width: 100%;
+    margin: 0% -10%;
+    width: 120% !important;
     height: auto;
+  }
+
+  .description {
+    margin: -6%;
+    width: 112% !important;
   }
 
   .email {
