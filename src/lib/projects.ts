@@ -23,7 +23,7 @@ export async function getProjects () {
     const name = folder.split(') ')[1]
     const files = await fs.promises.readdir(`public/images/projects/${folder}`)
     const photos: string[] = files.filter(file => !(file.includes('Cover') || file.includes('Mobile') || file.includes('Desktop')))
-    photos.sort((a, b) => a.localeCompare(b))
+    photos.sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
 
     const project = {
       name: name,
