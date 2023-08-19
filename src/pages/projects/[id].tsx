@@ -98,6 +98,7 @@ export default function Project ({ project }: { project: ProjectType }) {
                 alt={project.name}
                 fill
                 className={styles.photo}
+                placeholder='empty'
               />
             ))}
           </div>
