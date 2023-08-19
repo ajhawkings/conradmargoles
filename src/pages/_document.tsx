@@ -4,7 +4,7 @@ export default function Document () {
   return (
     <Html lang="en">
       <Head>
-        <meta name='theme-color' content='#000000' />
+        <meta name='theme-color' content='#ffffff' />
         <link rel='icon' href='favicon.ico' />
         <link rel='icon' href='favicon_alt.ico' media="(prefers-color-scheme: dark)"/>
         {/* Search Engines */}
