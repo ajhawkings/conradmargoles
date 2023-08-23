@@ -48,7 +48,6 @@ export default function Studio () {
               fill
             />
             <a className={styles.email} href="mailto:studio@conradmargoles.com" aria-label="mailto:studio@conradmargoles.com"></a>
-            <a className={styles.phone} href="tel:+442087805166" aria-label="Telephone number: +442087805166"></a>
           </div>
         </>}
       </div>
