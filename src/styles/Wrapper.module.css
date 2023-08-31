@@ -38,6 +38,11 @@
   color: var(--light-grey);
 }
 
+.menu > img {
+  position: relative;
+  right: -10%;
+}
+
 .menuItems {
   display: grid;
   grid-template-rows: 28px 26px 23px;
