@@ -84,8 +84,8 @@ export default function Project ({ project }: { project: ProjectType }) {
           <ExportedImage
             src="/images/handwritten/X.png"
             alt="Close project"
-            width="100"
-            height="100"
+            width="90"
+            height="90"
           />
         </Link>
         {/* Sliding image gallery */}

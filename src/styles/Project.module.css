@@ -44,7 +44,7 @@
 .close {
   position: absolute;
   top: 0;
-  right: -2rem;
+  right: -1.8rem;
 }
 
 .close > img {
@@ -78,6 +78,6 @@
   }
   .close {
     top: -2.5rem;
-    right: 0;
+    right: 0.2rem;
   }
 }
