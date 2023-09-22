@@ -15,6 +15,7 @@ export default function Studio () {
   return <>
     <Head>
       <title>Studio | Conrad Margoles Architects</title>
+      <meta name="description" content="We are a multi-cultural studio of dedicated and passionate architects that bring a variety of experiences and strengths to each project." />
     </Head>
     <Wrapper>
       <div className={styles.container}>

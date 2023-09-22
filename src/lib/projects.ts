@@ -1,5 +1,7 @@
 import fs from 'fs'
 
+import texts  from './texts.json'
+
 export interface ProjectType {
   name: string
   path: string
@@ -7,12 +9,18 @@ export interface ProjectType {
   textMobile: string
   textDesktop: string
   photos: string[]
+  description: string
 }
 
 export async function getProjects () {
   const folders = await fs.promises.readdir('public/images/projects')
 
-  const projects = folders.map(async (folder) => {
+  const descriptions: string[] = texts
+  while (descriptions.length < folders.length) {
+    descriptions.push('')
+  }
+
+  const projects = folders.map(async (folder, index) => {
     const name = folder.split(') ')[1]
     const files = await fs.promises.readdir(`public/images/projects/${folder}`)
     const photos: string[] = files.filter(file => !(file.includes('Cover') || file.includes('Mobile') || file.includes('Desktop') || file.includes('nextImageExportOptimizer')))
@@ -24,7 +32,8 @@ export async function getProjects () {
       photos: photos.map(photo => `/images/projects/${folder}/${photo}`),
       cover: `/images/projects/${folder}/Cover.jpg`,
       textMobile: `/images/projects/${folder}/Mobile.png`,
-      textDesktop: `/images/projects/${folder}/Desktop.png`
+      textDesktop: `/images/projects/${folder}/Desktop.png`,
+      description: descriptions[index]
     }
 
     return project

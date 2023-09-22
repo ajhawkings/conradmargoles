@@ -13,6 +13,7 @@ export default function Studio () {
   return <>
     <Head>
       <title>Contact | Conrad Margoles Architects</title>
+      <meta name="description" content="Conrad Margoles Architects, RIBA chartered practice 2004578. 6 Burstock Road, London, SW15 2PW. Email: studio@conradmargoles.com. Tel: +44 (0) 20 87805166" />
     </Head>
     <Wrapper>
       <div className={`${styles.container} ${styles.contact}`}>

@@ -25,6 +25,7 @@ export default function Portfolio (props: { projects: ProjectType[] }) {
   return <>
     <Head>
       <title>Portfolio | Conrad Margoles Architects</title>
+      <meta name="description" content="We have experience in residential and commercial work. We have designed new houses, interiors, urban and environment designs, analyses and masterplans." />
     </Head>
     <Wrapper>
       {props.projects.map((project: ProjectType) => (

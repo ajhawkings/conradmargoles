@@ -58,6 +58,7 @@ export default function Project ({ project }: { project: ProjectType }) {
   return <>
     <Head>
       <title>{`${project.name} | Conrad Margoles Architects`}</title>
+      <meta name="description" content={project.description} />
     </Head>
     <Wrapper>
       <div className={styles.root}>
