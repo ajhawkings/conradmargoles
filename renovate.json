@@ -25,7 +25,10 @@
   ],
   "lockFileMaintenance": {
     "enabled": true,
-    "automerge": true
+    "automerge": true,
+    "extends": ["schedule:quarterly"]
   },
-  "automergeType": "branch"
+  "automergeType": "branch",
+  "platformCommit": true,
+  "configMigration": true
 }
