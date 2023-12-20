@@ -28,5 +28,5 @@
     "enabled": true,
     "automerge": true
   },
-  "automergeType"="branch"
+  "automergeType": "branch"
 }
