@@ -80,20 +80,20 @@ export default function Landing ({ files }: Props) {
         width="300"
         height="100"
       />
-      {/* Gallery */}
-      <section>
-        {files.map((file, index) => (
-          <div className={index === current ? `${styles.slide} ${styles.active}` : styles.slide} key={index}>
-            <ExportedImage 
-              src={`images/home/${file}`} 
-              alt="Architectural project" 
-              className={styles.image} 
-              width="2560" 
-              height="1709"
-            />
-          </div>
-        ))}
-      </section>
     </Link>
+    {/* Gallery */}
+    <section>
+      {files.map((file, index) => (
+        <div className={`${styles.slide} ${(index === current ? styles.active : '')}`} key={index}>
+          <ExportedImage 
+            src={`images/home/${file}`} 
+            alt="Architectural project" 
+            className={styles.image} 
+            width="2560" 
+            height="1709"
+          />
+        </div>
+      ))}
+    </section>
   </>
 }
