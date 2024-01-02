@@ -33,7 +33,6 @@
   height: 100%;
   overflow: clip;
   position: absolute;
-  transition: opacity 1s ease-in-out;
 }
 
 .slide:not(.active) {
@@ -41,7 +40,6 @@
 }
 
 .slide.active {
-  transition-delay: 0.7s;
   opacity: 1;
 }
 
