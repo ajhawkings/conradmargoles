@@ -12,13 +12,14 @@
   position: absolute;
   top: 58%;
   transform: translateY(-50%);
-  left: 1rem;
+  left: 0;
   cursor: pointer;
   z-index: 1;
+  padding: 1rem;
 }
 
 .right {
-  right: 1.3rem;
+  right: 0.3rem;
   left: auto;
 }
 
