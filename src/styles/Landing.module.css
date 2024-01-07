@@ -3,7 +3,7 @@
   top: 2rem;
   left: 2rem;
   z-index: 1;
-  width: min(80vw, 300px);
+  width: min(80vw, 320px);
   height: auto;
 }
 
@@ -16,11 +16,17 @@
   cursor: pointer;
   z-index: 1;
   padding: 1rem;
+  width: 40%;
+  height: 70%;
+  border-radius: 1000px;
 }
 
 .right {
   right: 0.3rem;
   left: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .image {
