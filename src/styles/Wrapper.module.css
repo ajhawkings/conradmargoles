@@ -22,14 +22,14 @@
 }
 
 .logo {
-  width: min(60vw, 320px);
+  width: min(60vw, 260px);
   height: auto;
 }
 
 .main {
   width: 100%;
   min-width: 0;
-  margin-left: 345px;
+  margin-left: 290px;
 }
 
 .menu {

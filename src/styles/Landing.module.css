@@ -3,7 +3,7 @@
   top: 2rem;
   left: 2rem;
   z-index: 1;
-  width: min(80vw, 320px);
+  width: min(80vw, 260px);
   height: auto;
 }
 
