@@ -19,8 +19,8 @@
   background-color: var(--light-grey);
   padding: 0.8rem 0.3rem;
   z-index: 1;
-  height: min(70vh, 650px);
-  width: auto;
+  height: auto;
+  width: var(--margin);
   min-width: auto;
 }
 

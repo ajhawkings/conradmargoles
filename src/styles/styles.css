@@ -9,4 +9,19 @@
 
 :root {
   --light-grey: #ebebed;
+  --margin: 18vw;
+}
+
+/* small desktop */
+@media (min-width: 1001px) and (max-width: 1500px) {
+  :root {
+    --margin: 270px;
+  }
+}
+
+/* large desktop */
+@media (min-width: 2001px) {
+  :root {
+    --margin: 360px;
+  }
 }

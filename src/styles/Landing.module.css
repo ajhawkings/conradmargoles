@@ -1,9 +1,10 @@
 .logo {
   position: absolute;
-  top: 2rem;
-  left: 2rem;
+  padding: 1rem;
+  top: 1rem;
+  left: 1rem;
   z-index: 1;
-  width: min(80vw, 260px);
+  width: max(18vw, 270px);
   height: auto;
 }
 
