@@ -20,7 +20,7 @@
   padding: 0.8rem 0.3rem;
   z-index: 1;
   height: auto;
-  width: var(--margin);
+  width: calc(var(--margin) + 2vw);
   min-width: auto;
 }
 
