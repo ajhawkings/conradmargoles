@@ -17,6 +17,7 @@
   position: fixed;
   width: var(--margin);
   padding: 1rem;
+  z-index: 2;
 }
 
 .logo {
