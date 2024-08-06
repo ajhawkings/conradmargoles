@@ -10,25 +10,25 @@
     {
       "groupName": "all non-major dependencies",
       "groupSlug": "all-minor-patch",
-      "matchPackagePatterns": [
-        "*"
-      ],
       "matchUpdateTypes": [
         "minor",
         "patch"
       ],
-      "excludePackageNames": [
-        "next-image-export-optimizer"
-      ],
-      "automerge": true
+      "automerge": true,
+      "matchPackageNames": [
+        "*",
+        "!next-image-export-optimizer"
+      ]
     }
   ],
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true,
-    "extends": ["schedule:quarterly"]
+    "extends": [
+      "schedule:quarterly"
+    ]
   },
   "automergeType": "branch",
-  "platformCommit": true,
+  "platformCommit": "enabled",
   "configMigration": true
 }
