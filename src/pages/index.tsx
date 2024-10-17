@@ -19,15 +19,20 @@ interface Props {
   files: string[]
 }
 
+const HeadInfo = () => (
+  <Head>
+    <title>Conrad Margoles Architects</title>
+    <meta name="description" content="We are a multi-cultural studio of dedicated and passionate architects that bring a variety of experiences and strengths to each project." />
+  </Head>
+)
+
 export default function Landing ({ files }: Props) {
   const [current, setCurrent] = useState(0)
   const [width] = useViewport()
 
   if (width <= 1000) {
     return <>
-      <Head>
-        <title>Conrad Margoles Architects</title>
-      </Head>
+      <HeadInfo />
       <div className={styles.mcontainer}>
         <Wrapper>
           <ExportedImage
@@ -43,10 +48,7 @@ export default function Landing ({ files }: Props) {
   }
 
   return <>
-    <Head>
-      <title>Conrad Margoles Architects</title>
-      <meta name="description" content="We are a multi-cultural studio of dedicated and passionate architects that bring a variety of experiences and strengths to each project." />
-    </Head>
+    <HeadInfo />
     {/* Back button */}
     <button 
       className={styles.arrow} 

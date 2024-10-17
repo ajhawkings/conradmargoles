@@ -8,15 +8,14 @@ export default function Document () {
         <link rel='icon' href='favicon.ico' />
         <link rel='icon' href='favicon_alt.ico' media="(prefers-color-scheme: dark)"/>
         {/* Search Engines */}
-        <meta name='description' content='Conrad Margoles Architects' />
         <meta name='image' content='/images/handwritten/CAArchitects_Logo.png' />
         {/* Schema.org for Google */}
         <meta itemProp='name' content='Conrad Margoles Architects' />
-        <meta itemProp='description' content='Conrad Margoles Architects' />
+        <meta itemProp='description' content='We are a multi-cultural studio of dedicated and passionate architects that bring a variety of experiences and strengths to each project.' />
         <meta itemProp='image' content='/images/handwritten/CAArchitects_Logo.png' />
         {/* Open Graph (Facebook, Discord, SMS) */}
         <meta property='og:title' content='Conrad Margoles Architects' />
-        <meta property='og:description' content='Conrad Margoles Architects' />
+        <meta property='og:description' content='We are a multi-cultural studio of dedicated and passionate architects that bring a variety of experiences and strengths to each project.' />
         <meta property='og:type' content='website' />
         <meta property='og:url' content='https://conradmargoles.com' />
         <meta property='og:image' content='/images/handwritten/CAArchitects_Logo.png' />
