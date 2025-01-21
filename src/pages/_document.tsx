@@ -5,8 +5,8 @@ export default function Document () {
     <Html lang="en">
       <Head>
         <meta name='theme-color' content='#ffffff' />
-        <link rel='icon' href='favicon.ico' />
-        <link rel='icon' href='favicon_alt.ico' media="(prefers-color-scheme: dark)"/>
+        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='/favicon_alt.ico' media="(prefers-color-scheme: dark)"/>
         {/* Search Engines */}
         <meta name='image' content='/images/handwritten/CAArchitects_Logo.png' />
         {/* Schema.org for Google */}
