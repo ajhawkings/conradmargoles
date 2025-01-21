@@ -2,25 +2,31 @@
   "name": "conradmargoles",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build && next-image-export-optimizer",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "next": "15.1.5",
-    "next-image-export-optimizer": "^1.11.0",
-    "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "next-image-export-optimizer": "^1.18.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
   },
   "devDependencies": {
+    "@eslint/compat": "^1.2.5",
+    "@eslint/eslintrc": "^3.2.0",
+    "@eslint/js": "^9.18.0",
     "@types/node": "20.17.11",
-    "@types/react": "18.3.18",
-    "@types/react-dom": "18.3.5",
-    "@typescript-eslint/eslint-plugin": "^6.15.0",
-    "@typescript-eslint/parser": "^6.15.0",
-    "eslint": "^8.56.0",
+    "@types/react": "19.0.7",
+    "@types/react-dom": "19.0.3",
+    "eslint": "^9.18.0",
     "eslint-config-next": "15.1.5",
-    "typescript": "^5.3.3"
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.21.0"
+  },
+  "overrides": {
+    "@types/react": "19.0.7",
+    "@types/react-dom": "19.0.3"
   }
 }
