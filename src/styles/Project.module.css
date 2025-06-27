@@ -52,8 +52,8 @@
 .close {
   position: absolute;
   top: -2rem;
-  right: -3.8rem;
-  padding: 2rem;
+  right: -1.8rem;
+  padding: 2rem 0 2rem 2rem;
 }
 
 .close > img {
