@@ -27,9 +27,14 @@ export default function Studio () {
           />
           <ExportedImage
             src="/images/studio/Studio_mobile.png"
-            alt="Text describing the studio and team"
-            width={903}
-            height={3850}
+            alt="Text describing the studio"
+            fill
+            className={styles.description}
+          />
+          <ExportedImage
+            src="/images/studio/Team_mobile.png"
+            alt="Text listing team members"
+            fill
             className={styles.description}
           />
           <BackToTop />
@@ -54,7 +59,7 @@ export default function Studio () {
           <div className={styles.text}>
             <ExportedImage
               src="/images/studio/Team_desktop.png"
-              alt="Text describing the team"
+              alt="Text listing team members"
               fill
             />
           </div>
