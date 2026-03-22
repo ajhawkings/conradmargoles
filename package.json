@@ -8,7 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "15.5.10",
+    "next": "15.5.13",
     "next-image-export-optimizer": "^1.19.0",
     "react": "19.2.3",
     "react-dom": "19.2.3"
