@@ -40,6 +40,7 @@ export default function Studio () {
           <BackToTop />
         </>}
         {width >= 1001 && <>
+          {/* eslint-disable-next-line react-hooks/refs */}
           {(imageRef.current?.clientWidth ?? 501) > 500 &&
             <ExportedImage
               src="/images/studio/Photo_desktop.jpg"
