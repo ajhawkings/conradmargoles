@@ -32,8 +32,8 @@ export default function Studio () {
     const desktopPhotoShowWidth = 340
 
     const updatePhotoVisibility = () => {
-      const styles = window.getComputedStyle(container)
-      const gap = Number.parseFloat(styles.columnGap) || 0
+      const computedStyles = window.getComputedStyle(container)
+      const gap = Number.parseFloat(computedStyles.columnGap) || 0
       const usedWidth = studioText.offsetWidth + teamText.offsetWidth + (gap * 2)
       const availablePhotoWidth = container.clientWidth - usedWidth
 
@@ -44,16 +44,19 @@ export default function Studio () {
     }
 
     const animationFrame = window.requestAnimationFrame(updatePhotoVisibility)
+    let observer: ResizeObserver | null = null
 
-    const observer = new ResizeObserver(updatePhotoVisibility)
+    if (typeof ResizeObserver !== 'undefined') {
+      observer = new ResizeObserver(updatePhotoVisibility)
 
-    observer.observe(container)
-    observer.observe(studioText)
-    observer.observe(teamText)
+      observer.observe(container)
+      observer.observe(studioText)
+      observer.observe(teamText)
+    }
 
     return () => {
       window.cancelAnimationFrame(animationFrame)
-      observer.disconnect()
+      observer?.disconnect()
     }
   }, [isDesktop])
   
